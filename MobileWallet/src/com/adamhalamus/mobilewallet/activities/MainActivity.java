@@ -17,14 +17,13 @@ public class MainActivity extends ActionBarActivity implements MainLoggingCommun
 	final int LOGGING_INVALID = 1;
 	final int REGISTRATION = 2;
 	
+	MainInvalidLoggingFragment invalidLoggingFragment = new MainInvalidLoggingFragment();
+	MainLoggingFragment loggingFragment = new MainLoggingFragment();	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		MainInvalidLoggingFragment invalidLoggingFragment = new MainInvalidLoggingFragment();
-		MainLoggingFragment loggingFragment = new MainLoggingFragment();
 		
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -50,12 +49,10 @@ public class MainActivity extends ActionBarActivity implements MainLoggingCommun
 	
 	
 	@Override
-	public void respond(int value) {
-		if(value == LOGGING_INVALID){	
-			System.out.println("trololo");
-			FragmentManager fragmentManager = getSupportFragmentManager();
-			MainInvalidLoggingFragment invalidLoggingFragment = new MainInvalidLoggingFragment();
-			
+	public void changeFragment(int value) {
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		
+		if(value == LOGGING_INVALID){			
 			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.activity_main_layout, invalidLoggingFragment, "invalidLoggingFragment");
 			fragmentTransaction.commit();

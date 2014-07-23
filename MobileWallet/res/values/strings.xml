@@ -2,7 +2,13 @@
 <resources>
 
     <string name="app_name">Mobile Wallet</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="loggingTitleText">Sign in:</string>
+    <string name="loggingLoginText">User:</string>
+    <string name="loggingPasswordText">Password:</string>
+    <string name="loggingButtonText">GO!</string>
+    <string name="loggingRegistrationText">or if you're new here </string>
+    <string name="loggingRegistrationButtonText">Register</string>
 
 </resources>

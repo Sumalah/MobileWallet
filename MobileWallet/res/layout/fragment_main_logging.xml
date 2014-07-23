@@ -1,23 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#aaaaaa"
+    android:background="#ffffff"
     android:id="@+id/mainLoggingFragment" >
 
     <TextView
-        android:id="@+id/testTextView"
+        android:id="@+id/LoggingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Logging fragment"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/loggingTitleText"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/testButton"
+    <TextView
+        android:id="@+id/loggingLoginText"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_below="@+id/LoggingTitle"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loggingLoginText" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/loggingLoginEditText"
+        android:layout_width="wrap_content"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loggingLoginText"
+        android:layout_centerHorizontal="true"
+        android:ems="10" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/loggingPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loggingLoginEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/loggingPasswordText" />
+
+    <EditText
+        android:id="@+id/loggingPasswordEditText"
+        android:layout_width="wrap_content"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loggingPasswordText"
+        android:layout_centerHorizontal="true"
+        android:ems="10" >
+    </EditText>
+
+    <Button
+        android:id="@+id/loggingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/loggingPasswordText"
+        android:layout_below="@+id/loggingPasswordEditText"
+        android:layout_marginTop="21dp"
+        android:text="@string/loggingButtonText" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loggingButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:text="@string/loggingRegistrationText" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/loggingRegistrationButtonText" />
+
+</RelativeLayout>

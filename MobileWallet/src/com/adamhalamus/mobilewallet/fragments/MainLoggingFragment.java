@@ -29,7 +29,7 @@ public class MainLoggingFragment extends Fragment{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		comm = (MainLoggingCommunicator) getActivity();
-		button = (Button) getActivity().findViewById(R.id.testButton);
+		button = (Button) getActivity().findViewById(R.id.loggingButton);
 		
 		setLogginButtonListener(button);
 		
@@ -40,7 +40,7 @@ public class MainLoggingFragment extends Fragment{
 			
 			@Override
 			public void onClick(View v) {
-				comm.respond(1);
+				comm.changeFragment(1);
 			}
 		});
 	}
