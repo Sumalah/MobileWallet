@@ -48,6 +48,7 @@ public class MainActivity extends ActionBarActivity implements MainLoggingCommun
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		fragmentTransaction.add(R.id.activity_main_layout, loggingFragment, "loggingFragment");
+		fragmentTransaction.addToBackStack("loggingFragment");
 		fragmentTransaction.commit();
 	}
 	
@@ -63,6 +64,7 @@ public class MainActivity extends ActionBarActivity implements MainLoggingCommun
 		} else if(value == LoggingValues.REGISTRATION){
 			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.activity_main_layout, registrationFragment, "registrationFragment");
+			fragmentTransaction.addToBackStack("registrationFragment");
 			fragmentTransaction.commit();
 		}
 		
