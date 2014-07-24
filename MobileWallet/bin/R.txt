@@ -331,7 +331,7 @@ int layout abc_popup_menu_item_layout 0x7f030014
 int layout abc_search_dropdown_item_icons_2line 0x7f030015
 int layout abc_search_view 0x7f030016
 int layout abc_simple_decor 0x7f030017
-int layout activity_main 0x7f030018
+int layout activity_logging 0x7f030018
 int layout activity_menu 0x7f030019
 int layout fragment_main_logging 0x7f03001a
 int layout fragment_main_registration 0x7f03001b

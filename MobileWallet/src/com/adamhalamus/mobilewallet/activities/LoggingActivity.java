@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity implements MainLoggingCommunicator{
+public class LoggingActivity extends ActionBarActivity implements MainLoggingCommunicator{
 	
 	MainLoggingFragment loggingFragment = new MainLoggingFragment();
 	MainRegistrationFragment registrationFragment = new MainRegistrationFragment();
@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity implements MainLoggingCommun
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_logging);
 		
 		setDefaultFragment();
 		
