@@ -2,6 +2,7 @@ package com.adamhalamus.mobilewallet.activities;
 
 import com.adamhalamus.mobilewallet.R;
 import com.adamhalamus.mobilewallet.fragments.MainLoggingFragment;
+import com.adamhalamus.mobilewallet.fragments.MainRegistrationFragment;
 import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
 import android.support.v4.app.FragmentManager;

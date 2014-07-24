@@ -1,4 +1,4 @@
-package com.adamhalamus.mobilewallet.activities;
+package com.adamhalamus.mobilewallet.fragments;
 
 import com.adamhalamus.mobilewallet.R;
 
