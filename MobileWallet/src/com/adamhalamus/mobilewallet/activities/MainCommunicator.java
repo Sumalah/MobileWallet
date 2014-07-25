@@ -1,5 +1,5 @@
 package com.adamhalamus.mobilewallet.activities;
 
-public interface MainLoggingCommunicator {
+public interface MainCommunicator {
 	public void changeFragment(int value, String message);
 }

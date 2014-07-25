@@ -1,7 +1,7 @@
 package com.adamhalamus.mobilewallet.fragments;
 
 import com.adamhalamus.mobilewallet.R;
-import com.adamhalamus.mobilewallet.activities.MainLoggingCommunicator;
+import com.adamhalamus.mobilewallet.activities.LoggingCommunicator;
 import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
 import android.content.Context;
@@ -14,9 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainLoggingFragment extends Fragment{
+public class LoggingFragment extends Fragment{
 	
-	MainLoggingCommunicator comm;
+	LoggingCommunicator comm;
 	
 	Button loggingButton;
 	Button registerButton;
@@ -27,14 +27,14 @@ public class MainLoggingFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		return inflater.inflate(R.layout.fragment_main_logging, container, false);
+		return inflater.inflate(R.layout.fragment_logging, container, false);
 	}
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		
-		comm = (MainLoggingCommunicator) getActivity();
+		comm = (LoggingCommunicator) getActivity();
 		defineAllViewElements();
 		
 		loggingButton.setOnClickListener(new View.OnClickListener() {

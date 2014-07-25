@@ -1,8 +1,8 @@
 package com.adamhalamus.mobilewallet.activities;
 
 import com.adamhalamus.mobilewallet.R;
-import com.adamhalamus.mobilewallet.fragments.MainLoggingFragment;
-import com.adamhalamus.mobilewallet.fragments.MainRegistrationFragment;
+import com.adamhalamus.mobilewallet.fragments.LoggingFragment;
+import com.adamhalamus.mobilewallet.fragments.RegistrationFragment;
 import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
 import android.support.v4.app.FragmentManager;
@@ -15,10 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class LoggingActivity extends ActionBarActivity implements MainLoggingCommunicator{
+public class LoggingActivity extends ActionBarActivity implements LoggingCommunicator{
 	
-	MainLoggingFragment loggingFragment = new MainLoggingFragment();
-	MainRegistrationFragment registrationFragment = new MainRegistrationFragment();
+	LoggingFragment loggingFragment = new LoggingFragment();
+	RegistrationFragment registrationFragment = new RegistrationFragment();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,8 @@ public class LoggingActivity extends ActionBarActivity implements MainLoggingCom
 		if(value == LoggingValues.LOGGING_INVALID){			
 			showToast(message);
 		} else if(value == LoggingValues.LOGGING_VALID){
-			Intent intent = new Intent(this, MenuActivity.class);
+			LoggingValues.setSharedPreferencesBoolValue("NetworkPreferences", this);
+			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 		} else if(value == LoggingValues.REGISTRATION){
 			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

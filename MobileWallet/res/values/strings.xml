@@ -10,7 +10,11 @@
     <string name="loggingRegistrationText">or if you\'re new here </string>
     <string name="loggingRegistrationButtonText">Register</string>
     <string name="loggingInvalidErrorDefaultText">Error</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_menu">LoggingActivity</string>
+    <string name="networkDefaultTextView">OFFLINE</string>
+    <string name="signInButtonText">Sign In</string>
+    
+    <color name="networkStatusRed">#C90000</color>
+    <color name="networkStatusGreen">#C3EB54</color>
 
 </resources>
