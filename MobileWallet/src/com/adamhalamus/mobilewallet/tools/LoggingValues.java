@@ -11,15 +11,15 @@ public class LoggingValues {
 	public final static int REGISTRATION = 2;
 	
 	public static boolean getSharedPreferencesValue(String key, Context context){
-		SharedPreferences pref = context.getSharedPreferences("NetworkPreferences", 0); 
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		
-		return pref.getBoolean(key, false);
+		return prefs.getBoolean(key, false);
 	}
 	
-	public static void setSharedPreferencesBoolValue(String key, Context context){
+	public static void setSharedPreferencesBoolValue(String key, boolean value, Context context){
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		Editor editor = prefs.edit();
-		editor.putBoolean(key, false);
+		editor.putBoolean(key, value);
 		editor.commit();
 	}
 }

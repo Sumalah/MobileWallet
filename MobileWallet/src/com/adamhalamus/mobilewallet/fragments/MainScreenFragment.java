@@ -40,8 +40,14 @@ public class MainScreenFragment extends Fragment{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(), LoggingActivity.class);
-				startActivity(intent);
+				if(!isUserConnected()){
+					Intent intent = new Intent(getActivity(), LoggingActivity.class);
+					startActivity(intent);
+				} else {
+					LoggingValues.setSharedPreferencesBoolValue("NetworkStatus", false, getActivity());
+					Intent intent = new Intent(getActivity(), MainActivity.class);
+					startActivity(intent);
+				}
 			}
 		});
 	}
@@ -50,6 +56,7 @@ public class MainScreenFragment extends Fragment{
 		if(isUserConnected()){
 			networkStatusTextView.setTextColor(getResources().getColor(R.color.networkStatusGreen));
 			networkStatusTextView.setText("ONLINE");
+			signInButton.setText("Sign Out");
 		}
 	}
 

@@ -59,7 +59,7 @@ public class LoggingActivity extends ActionBarActivity implements LoggingCommuni
 		if(value == LoggingValues.LOGGING_INVALID){			
 			showToast(message);
 		} else if(value == LoggingValues.LOGGING_VALID){
-			LoggingValues.setSharedPreferencesBoolValue("NetworkPreferences", this);
+			LoggingValues.setSharedPreferencesBoolValue("NetworkStatus", true, this);
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 		} else if(value == LoggingValues.REGISTRATION){
