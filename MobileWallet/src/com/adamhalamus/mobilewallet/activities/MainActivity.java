@@ -9,15 +9,23 @@ import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
 	
-	MainScreenFragment mainScreenFragment = new MainScreenFragment(); 
+	MainScreenFragment mainScreenFragment = new MainScreenFragment();
+	private DrawerLayout drawerLayout;
+	private ListView listView;
+	private String[] drawerMenuList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,7 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main_screen);
 		
 		setDefaultFragment();
+		defineAllViewElements();
 	}
 
 	@Override
@@ -48,6 +57,13 @@ public class MainActivity extends ActionBarActivity {
 		fragmentTransaction.add(R.id.activity_main_screen, mainScreenFragment, "mainScreenFragment");
 		fragmentTransaction.addToBackStack("mainScreenFragment");
 		fragmentTransaction.commit();
+	}
+	
+	private void defineAllViewElements(){
+		drawerMenuList = getResources().getStringArray(R.array.menuList);
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+		listView = (ListView) findViewById(R.id.drawerList);
+		listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawerMenuList));
 	}
 	
 }

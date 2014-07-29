@@ -16,5 +16,14 @@
     
     <color name="networkStatusRed">#C90000</color>
     <color name="networkStatusGreen">#C3EB54</color>
+    
+    <string-array name="menuList">
+        <item>Option1</item>
+        <item>Option2</item>
+        <item>Option3</item>
+        <item>Option4</item>
+        <item>Option5</item>
+        <item>Option6</item>
+    </string-array>
 
 </resources>
