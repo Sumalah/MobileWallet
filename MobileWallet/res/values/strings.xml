@@ -13,6 +13,8 @@
     <string name="title_activity_menu">LoggingActivity</string>
     <string name="networkDefaultTextView">OFFLINE</string>
     <string name="signInButtonText">Sign In</string>
+    <string name="drawerOpen">Open</string>
+    <string name="drawerClose">Close</string>
     
     <color name="networkStatusRed">#C90000</color>
     <color name="networkStatusGreen">#C3EB54</color>

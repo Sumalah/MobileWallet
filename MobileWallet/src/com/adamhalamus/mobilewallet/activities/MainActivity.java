@@ -7,11 +7,13 @@ import com.adamhalamus.mobilewallet.R.menu;
 import com.adamhalamus.mobilewallet.fragments.MainScreenFragment;
 import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +32,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private DrawerLayout drawerLayout;
 	private ListView listView;
 	private String[] drawerMenuList;
+	private ActionBarDrawerToggle drawerListener;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.action_settings || drawerListener.onOptionsItemSelected(item)) {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -66,9 +69,28 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private void defineAllViewElements(){
 		drawerMenuList = getResources().getStringArray(R.array.menuList);
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.drawerOpen, R.string.drawerClose);
+		drawerLayout.setDrawerListener(drawerListener);
+		
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		listView = (ListView) findViewById(R.id.drawerList);
 		listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawerMenuList));
 		listView.setOnItemClickListener(this);
+	}
+		
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onPostCreate(savedInstanceState);
+		drawerListener.syncState();
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		drawerListener.onConfigurationChanged(newConfig);
 	}
 
 	@Override
