@@ -15,12 +15,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnItemClickListener {
 	
 	MainScreenFragment mainScreenFragment = new MainScreenFragment();
 	private DrawerLayout drawerLayout;
@@ -64,6 +68,17 @@ public class MainActivity extends ActionBarActivity {
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 		listView = (ListView) findViewById(R.id.drawerList);
 		listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawerMenuList));
+		listView.setOnItemClickListener(this);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Toast.makeText(this, drawerMenuList[position], Toast.LENGTH_SHORT).show();
+		setTitle(drawerMenuList[position]);
 	}
 	
+	private void setTitle(String title){
+		getSupportActionBar().setTitle(title);
+	}
 }

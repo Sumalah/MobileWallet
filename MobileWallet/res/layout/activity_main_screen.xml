@@ -15,7 +15,8 @@
         android:entries="@array/menuList"
         android:layout_width="240dp"
     	android:layout_height="match_parent"
-    	android:layout_gravity="left" >
+    	android:layout_gravity="left"
+    	android:background="#f1f1f1" >
         
         
     </ListView>
