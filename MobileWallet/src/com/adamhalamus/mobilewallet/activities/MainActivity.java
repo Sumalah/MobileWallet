@@ -98,10 +98,10 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Toast.makeText(this, drawerMenuList[position], Toast.LENGTH_SHORT).show();
-		setTitle(drawerMenuList[position]);
+		setActionBarTitle(drawerMenuList[position]);
 	}
 	
-	private void setTitle(String title){
+	private void setActionBarTitle(String title){
 		getSupportActionBar().setTitle(title);
 	}
 }
