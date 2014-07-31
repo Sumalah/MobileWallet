@@ -2,11 +2,9 @@ package com.adamhalamus.mobilewallet.fragments;
 
 import com.adamhalamus.mobilewallet.R;
 import com.adamhalamus.mobilewallet.activities.LoggingActivity;
-import com.adamhalamus.mobilewallet.activities.LoggingCommunicator;
 import com.adamhalamus.mobilewallet.activities.MainActivity;
 import com.adamhalamus.mobilewallet.tools.LoggingValues;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,9 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainScreenFragment extends Fragment{
 	
